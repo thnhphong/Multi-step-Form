@@ -1,0 +1,255 @@
+*{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.containerr{
+  overflow: hidden;
+  margin: 0 auto;
+  height: 430px;
+  width: 540px;
+  position: relative;
+  border-radius: 10px;
+  background: white;
+  padding: 20px;
+  box-shadow: 20px 15px 0px -6px rgba(196, 106, 106, 0.35);
+    -webkit-box-shadow: 20px 15px 0px -6px rgba(196, 106, 106, 0.35);
+    -moz-box-shadow: 20px 15px 0px -6px rgba(196, 106, 106, 0.35);
+}
+.step{
+  width: 90%;
+  display: flex;
+  margin: 0 20px 0 26px;
+}
+.show{
+  visibility: visible;
+}
+.hidden{
+  transition: 0.1s ease-out;
+  visibility: hidden;
+}
+.circle{
+  position: relative;
+  color: black;
+  background: #e6e7eb;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 3px 2px 0 10px;
+}
+.circle.active{
+  color: white;
+  background: #fc6c4c;
+}
+.circle .circle-check{
+  color: white;
+  position: absolute;
+  top: 14%;
+  left: 25%;
+  display: none;
+}
+.line{
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 14px;
+  width: 80px;
+  height: 5px;
+  background: #e6e7eb;
+}
+.line::before{
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: '';
+  background: #fc6c4c;
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0); 
+  transition: transform 0.5s ease; 
+}
+.line.active::before{
+  transform: scaleX(1);
+}
+.inputs{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 16px;
+}
+.input-item{
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+}
+.input-item input{
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: 1px solid #dadde2;
+  transition: box-shadow .1s ease-out;
+}
+.input-item input:hover{
+  border: 1px solid #fd886e;
+}
+.input-item input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #fd886e;
+}
+.next-btn{
+  padding-top: 16px;
+  float: right;
+  background: #fc6c4c;
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+.goback-btn{
+  display: none;
+  padding-top: 16px;
+  float: left;
+  background: transparent;
+  border: 1px solid #fc6c4c;
+  padding: 8px 16px;
+  color: #fc6c4c;
+  border-radius: 10px; 
+}
+hr{
+  color: #b2b9cf !important;
+}
+.row{
+ 
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap !important;
+  transition: margin-left 0.5s ease;
+}
+.row > div{
+  min-width: 530px;
+}
+.row.shift-left{
+  transform: translateX(-100%);
+}
+.text-h4{
+  font-weight: 500;
+}
+.text-p{
+  color: #8c9094;
+}
+#form1{
+  left: -450px;
+}
+.skill{
+  width: 220px;
+  border-radius: 10px;
+  border: 1px solid #edeef0;
+  padding: 12px 12px;
+  transition: border-color 0.3s ease-in-out;
+}
+.skill.selected{
+  border: 1.4px solid #fc6c4c;
+}
+.skill:hover{
+  border: 1.4px solid #fc6c4c;
+}
+.skill span{
+  margin-top: 2px;
+  padding-right: 16px;
+}
+.skill h4{
+  margin-top: 4px;
+  font-size: 18px;
+}
+.skill-grid{
+  gap: 12px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.challenge{
+  width: 220px;
+  padding: 16px 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1.5px solid #edeef0;
+}
+.challenge.selected{
+  border: 1.4px solid #fc6c4c;
+}
+.challenge:hover{
+  border: 1px solid #fc6c4c;
+}
+input[type="checkbox"]{
+  background: red;
+}
+.challenge label{
+  margin: 0 12px 0 16px;
+}
+.challenge-grid{
+  gap: 12px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.review-grid{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto auto auto;
+}
+.review-item{
+  font-size: 14px;
+  height: 70px;
+  width: 162px;
+  border-radius: 10px;
+  background: #f2f3f5;
+}
+.review-item p{
+  padding: 14px 0 0 12px;
+  font-size: 14px;
+}
+.review-item p:nth-of-type(1){
+  color: #8c9094;
+}
+.review-item p:nth-of-type(2){
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: -28px;
+}
+.background{
+  visibility: hidden;
+  content: '';
+  border-radius: 50px;
+  width: 120px;
+  height: 40px;
+  background: #fc6c4c;
+  animation: rotate 4s linear infinite;
+}
+@keyframes rotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+.background::before,
+.background::after{
+  position: absolute;
+  content: '';
+  background: #fc6c4c;
+  display: block;
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+}
+.background::before {
+  transform: rotate(-60deg);
+}
+.background::after {
+  transform: rotate(60deg);
+}
+.checkmark-circle{
+  position: relative;
+  margin-left: 192px;
+}
+.check i{
+  font-size: 3rem;
+  color: white;
+  position: absolute;
+  top: -15%;
+  left: 14%;
+}
